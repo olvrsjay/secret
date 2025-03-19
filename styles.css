@@ -1,0 +1,198 @@
+
+
+* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.invitation-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.invitation-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 192, 203, 0.3);
+    border-radius: 50%;
+}
+
+.invitation-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 192, 203, 0.3);
+    border-radius: 50%;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff4d6d;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+    width: 100px;
+}
+
+.yes-btn:hover {
+    background-color: #ff2d55;
+    transform: scale(1.05);
+}
+
+.no-btn {
+    background-color: #808080;
+    color: white;
+    width: 100px;
+}
+
+.no-btn:hover {
+    background-color: #707070;
+}
+
+.date-options {
+    display: none;
+    margin-top: 20px;
+}
+
+.date-options h2 {
+    color: #ff4d6d;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.date-choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date-choice {
+    background-color: #ffd5e5;
+    color: #ff2d55;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.date-choice:hover {
+    background-color: #ff4d6d;
+    color: white;
+    transform: scale(1.05);
+}
+
+.final-message {
+    display: none;
+    padding: 20px;
+    background-color: rgba(255, 212, 219, 0.3);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.final-message h2 {
+    color: #ff4d6d;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+
+.final-message p {
+    color: #444;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 480px) {
+    .invitation-card {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .message {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+    }
+}

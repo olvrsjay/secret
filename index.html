@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Invitation for Zanea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="invitation-card">
+            <div class="invitation-content">
+                <h1>Dear Zanea</h1>
+                <p class="message">Would you like to go on a date with me?</p>
+                <div class="buttons">
+                    <button id="yes-btn" class="btn yes-btn">Yes</button>
+                    <button id="no-btn" class="btn no-btn">No</button>
+                </div>
+                <div class="date-options" id="date-options">
+                    <h2>ano want mo nga date? hehe</h2>
+                    <div class="date-choices">
+                        <button class="date-choice">Movie Date</button>
+                        <button class="date-choice">Coffee Date</button>
+                        <button class="date-choice">Dinner Date</button>
+                        <button class="date-choice">Park Date</button>
+                        <button class="date-choice">Surprise Date</button>
+                    </div>
+                    <div class="final-message" id="final-message">
+                        <h2>nayswann hehe swabe lang tadi ya ah</h2>
+                        <p>depende simo kung when mo gusto ah hehe gn pindot mo ang yes kag HAHAHA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('no-btn');
+        const yesBtn = document.getElementById('yes-btn');
+        const dateOptions = document.getElementById('date-options');
+        const finalMessage = document.getElementById('final-message');
+        const dateChoices = document.querySelectorAll('.date-choice');
+        
+      
+        let noButtonSize = 100;
+        let clickCount = 0;
+        
+        noBtn.addEventListener('click', function() {
+            clickCount++;
+            
+            if (noButtonSize > 20) {
+              
+                noButtonSize -= 10;
+                this.style.width = `${noButtonSize}px`;
+                this.style.height = `${noButtonSize/2}px`;
+                this.style.fontSize = `${Math.max(8, 12 - clickCount * 2)}px`;
+            } else {
+               
+                const maxX = window.innerWidth - noBtn.offsetWidth;
+                const maxY = window.innerHeight - noBtn.offsetHeight;
+                
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+                
+                this.style.position = 'fixed';
+                this.style.left = `${randomX}px`;
+                this.style.top = `${randomY}px`;
+            }
+        });
+        
+        yesBtn.addEventListener('click', function() {
+         
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+          
+            dateOptions.style.display = 'block';
+            
+          
+            document.querySelector('.message').textContent = 'nayswann! hehe depende simo kung when mo gusto ah gn pindot mo ang "yes" kag HAHAHAHAHAHAHAAH';
+        });
+        
+      
+        dateChoices.forEach(button => {
+            button.addEventListener('click', function() {
+   
+                document.querySelector('.date-choices').style.display = 'none';
+                
+              
+                finalMessage.style.display = 'block';
+                
+ 
+                const chosenDate = this.textContent;
+                document.querySelector('#final-message p').textContent = 
+                    `looking forward sa ${chosenDate.toLowerCase()}! ta ah hehe`;
+            });
+        });
+    </script>
+</body>
+</html>
